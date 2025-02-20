@@ -98,9 +98,7 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
 };
 // macro for ê on combo 10 ?
 
-combo_t key_combos[] = {
-    COMBO(combo1, KC_0), COMBO(combo2, KC_2), COMBO(combo3, KC_7), COMBO(combo4, KC_ESCAPE), COMBO(combo5, KC_9), COMBO(combo6, KC_ESCAPE), COMBO(combo8, KC_2), COMBO(combo9, KC_7),
-};
+combo_t key_combos[] = {COMBO(combo1, KC_0), COMBO(combo2, KC_2), COMBO(combo3, KC_7), COMBO(combo4, KC_ESCAPE), COMBO(combo5, KC_9), COMBO(combo6, KC_ESCAPE), COMBO(combo8, KC_2), COMBO(combo9, KC_7), COMBO(combo11, KC_KP_1), COMBO(combo12, KC_KP_2), COMBO(combo13, KC_KP_3), COMBO(combo14, KC_KP_4), COMBO(combo15, KC_KP_5), COMBO(combo16, KC_KP_6), COMBO(combo17, KC_KP_7), COMBO(combo18, KC_KP_8), COMBO(combo19, KC_KP_9), COMBO(combo20, KC_KP_0)};
 
 // Tap Dance declarations
 enum { TD_U, TD_A };
