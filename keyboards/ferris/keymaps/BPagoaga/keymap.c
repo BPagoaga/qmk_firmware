@@ -66,6 +66,16 @@ const uint16_t PROGMEM combo7[]  = {LALT_T(KC_S), KC_W, COMBO_END};
 const uint16_t PROGMEM combo8[]  = {LCTL_T(KC_D), KC_E, COMBO_END};
 const uint16_t PROGMEM combo9[]  = {LSFT_T(KC_F), KC_R, COMBO_END};
 const uint16_t PROGMEM combo10[] = {KC_G, KC_T, COMBO_END};
+const uint16_t PROGMEM combo11[] = {KC_Z, LGUI_T(KC_A), COMBO_END};
+const uint16_t PROGMEM combo12[] = {KC_X, LALT_T(KC_S), COMBO_END};
+const uint16_t PROGMEM combo13[] = {KC_C, LCTL_T(KC_D), COMBO_END};
+const uint16_t PROGMEM combo14[] = {KC_V, LSFT_T(KC_F), COMBO_END};
+const uint16_t PROGMEM combo15[] = {KC_B, KC_T, COMBO_END};
+const uint16_t PROGMEM combo16[] = {KC_N, KC_H, COMBO_END};
+const uint16_t PROGMEM combo17[] = {KC_M, LSFT_T(KC_J), COMBO_END};
+const uint16_t PROGMEM combo18[] = {KC_COMMA, LCTL_T(KC_K), COMBO_END};
+const uint16_t PROGMEM combo19[] = {KC_DOT, LALT_T(KC_L), COMBO_END};
+const uint16_t PROGMEM combo20[] = {KC_SLASH, LGUI_T(KC_SEMICOLON), COMBO_END};
 
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
     switch (keycode) {
