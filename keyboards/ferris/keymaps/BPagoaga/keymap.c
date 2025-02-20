@@ -55,11 +55,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     return true;
 };
 
-const uint16_t PROGMEM combo1[] = {KC_Q, KC_W, COMBO_END};
-const uint16_t PROGMEM combo2[] = {KC_W, KC_E, COMBO_END};
-const uint16_t PROGMEM combo3[] = {KC_E, KC_R, COMBO_END};
-const uint16_t PROGMEM combo4[] = {LGUI_T(KC_A), LALT_T(KC_S), COMBO_END};
-const uint16_t PROGMEM combo5[] = {KC_C, KC_V, COMBO_END};
+// @TODO add new vertical combos
+const uint16_t PROGMEM combo1[]  = {KC_Q, KC_W, COMBO_END};
+const uint16_t PROGMEM combo2[]  = {KC_W, KC_E, COMBO_END};
+const uint16_t PROGMEM combo3[]  = {KC_E, KC_R, COMBO_END};
+const uint16_t PROGMEM combo4[]  = {LGUI_T(KC_A), LALT_T(KC_S), COMBO_END};
+const uint16_t PROGMEM combo5[]  = {KC_C, KC_V, COMBO_END};
+const uint16_t PROGMEM combo6[]  = {LGUI_T(KC_A), KC_Q, COMBO_END};
+const uint16_t PROGMEM combo7[]  = {LALT_T(KC_S), KC_W, COMBO_END};
+const uint16_t PROGMEM combo8[]  = {LCTL_T(KC_D), KC_E, COMBO_END};
+const uint16_t PROGMEM combo9[]  = {LSFT_T(KC_F), KC_R, COMBO_END};
+const uint16_t PROGMEM combo10[] = {KC_G, KC_T, COMBO_END};
 
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
     switch (keycode) {
@@ -80,23 +86,24 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
         SMTD_MT(CKC_M, KC_M, KC_LEFT_GUI)
     }
 };
+// macro for ê on combo 10 ?
 
 combo_t key_combos[] = {
-    COMBO(combo1, KC_0), COMBO(combo2, KC_2), COMBO(combo3, KC_7), COMBO(combo4, KC_ESCAPE), COMBO(combo5, KC_9),
+    COMBO(combo1, KC_0), COMBO(combo2, KC_2), COMBO(combo3, KC_7), COMBO(combo4, KC_ESCAPE), COMBO(combo5, KC_9), COMBO(combo6, KC_ESCAPE), COMBO(combo8, KC_2), COMBO(combo9, KC_7),
 };
 
 // Tap Dance declarations
-enum {
-    TD_U,
-};
+enum { TD_U, TD_A };
 
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
     // Tap once for u, twice for ù
     [TD_U] = ACTION_TAP_DANCE_DOUBLE(KC_U, KC_QUOTE),
+    // Tap once for a, twice for à
+    [TD_A] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_0),
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {[_BASE] = LAYOUT_split_3x5_2(KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, TD(TD_U), KC_I, KC_O, KC_P, LGUI_T(KC_A), LALT_T(KC_S), LCTL_T(KC_D), LSFT_T(KC_F), KC_G, KC_H, LSFT_T(KC_J), LCTL_T(KC_K), LALT_T(KC_L), LGUI_T(KC_SEMICOLON), KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMMA, KC_DOT, KC_SLASH, LSFT_T(KC_BACKSPACE), LT(3, KC_TAB), LT(2, KC_ENTER), LT(1, KC_SPACE)),
                                                               [_SYM]  = LAYOUT_split_3x5_2(KC_1, KC_LBRC, RALT(KC_4), RALT(KC_EQUAL), RALT(KC_6), KC_GRAVE, RALT(KC_7), KC_8, RALT(KC_0), KC_KP_ASTERISK, KC_EQUAL, KC_RBRC, KC_5, KC_MINUS, KC_NONUS_BACKSLASH, LSFT(KC_NONUS_BACKSLASH), KC_3, KC_4, KC_NO, KC_KP_PLUS, RALT(KC_3), LSFT(KC_QUOTE), RALT(KC_5), RALT(KC_MINUS), RALT(KC_2), KC_NO, KC_NO, KC_NO, RALT(KC_8), KC_KP_MINUS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS),
-                                                              [_NUM]  = LAYOUT_split_3x5_2(KC_KP_1, KC_KP_2, KC_KP_3, KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_0, KC_0, KC_LBRC, KC_NO, KC_NO, KC_NO, KC_NUM_LOCK, KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_KP_PLUS, KC_CAPS_LOCK, LSFT(KC_LBRC), KC_NO, KC_NO, KC_NO, KC_NO, KC_M, LSFT(KC_COMMA), KC_DOT, KC_KP_EQUAL, KC_LSFT, KC_Z, KC_LSFT, KC_Z),
+                                                              [_NUM]  = LAYOUT_split_3x5_2(KC_KP_1, KC_KP_2, KC_KP_3, KC_KP_4, KC_KP_5, KC_KP_6, KC_KP_7, KC_KP_8, KC_KP_9, KC_KP_0, KC_0, KC_LBRC, KC_NO, KC_NO, KC_NO, KC_NUM_LOCK, KC_KP_SLASH, KC_KP_ASTERISK, KC_KP_MINUS, KC_KP_PLUS, KC_CAPS_LOCK, LSFT(KC_LBRC), KC_NO, KC_NO, KC_NO, KC_NO, KC_M, LSFT(KC_COMMA), KC_DOT, KC_KP_EQUAL, KC_BACKSPACE, KC_Z, KC_LSFT, KC_Z),
                                                               [_NAV]  = LAYOUT_split_3x5_2(OSM(MOD_LSFT | MOD_LGUI), OSM(MOD_LSFT | MOD_LALT), OSM(MOD_LCTL | MOD_LSFT), OSM(MOD_LCTL | MOD_LGUI), KC_BRID, KC_BRIU, KC_PGDN, KC_PGUP, KC_PRINT_SCREEN, KC_F12, OSM(MOD_LGUI), OSM(MOD_LCTL | MOD_LALT), OSM(MOD_MEH), OSM(MOD_HYPR), KC_VOLU, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT, KC_NO, KC_MUTE, KC_CUT, KC_COPY, KC_PSTE, KC_VOLD, KC_WH_R, KC_WH_U, KC_WH_D, KC_WH_L, KC_NO, KC_BTN3, KC_BTN4, KC_BTN1, KC_BTN2)};

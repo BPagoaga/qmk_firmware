@@ -55,3 +55,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #endif
 
 #define MAX_DEFERRED_EXECUTORS 10
+#define EE_HANDS
