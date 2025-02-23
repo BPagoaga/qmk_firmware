@@ -38,6 +38,9 @@ enum custom_keycodes {
     // SMTD keycodes end
 };
 
+// Tap Dance declarations
+enum { TD_U, TD_A };
+
 #include "sm_td.h"
 
 /* THIS FILE WAS GENERATED!
@@ -61,7 +64,7 @@ const uint16_t PROGMEM combo2[]  = {KC_W, KC_E, COMBO_END};
 const uint16_t PROGMEM combo3[]  = {KC_E, KC_R, COMBO_END};
 const uint16_t PROGMEM combo4[]  = {LGUI_T(KC_A), LALT_T(KC_S), COMBO_END};
 const uint16_t PROGMEM combo5[]  = {KC_C, KC_V, COMBO_END};
-const uint16_t PROGMEM combo6[]  = {LGUI_T(KC_A), KC_Q, COMBO_END};
+const uint16_t PROGMEM combo6[]  = {LGUI_T(KC_A), TD(TD_A), COMBO_END};
 const uint16_t PROGMEM combo7[]  = {LALT_T(KC_S), KC_W, COMBO_END};
 const uint16_t PROGMEM combo8[]  = {LCTL_T(KC_D), KC_E, COMBO_END};
 const uint16_t PROGMEM combo9[]  = {LSFT_T(KC_F), KC_R, COMBO_END};
@@ -76,6 +79,7 @@ const uint16_t PROGMEM combo17[] = {KC_M, LSFT_T(KC_J), COMBO_END};
 const uint16_t PROGMEM combo18[] = {KC_COMMA, LCTL_T(KC_K), COMBO_END};
 const uint16_t PROGMEM combo19[] = {KC_DOT, LALT_T(KC_L), COMBO_END};
 const uint16_t PROGMEM combo20[] = {KC_SLASH, LGUI_T(KC_SEMICOLON), COMBO_END};
+const uint16_t PROGMEM combofj[] = {LSFT_T(KC_F), LSFT_T(KC_J), COMBO_END};
 
 void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
     switch (keycode) {
@@ -98,10 +102,7 @@ void on_smtd_action(uint16_t keycode, smtd_action action, uint8_t tap_count) {
 };
 // macro for ê on combo 10 ?
 
-combo_t key_combos[] = {COMBO(combo1, KC_0), COMBO(combo2, KC_2), COMBO(combo3, KC_7), COMBO(combo4, KC_ESCAPE), COMBO(combo5, KC_9), COMBO(combo6, KC_ESCAPE), COMBO(combo8, KC_2), COMBO(combo9, KC_7), COMBO(combo11, KC_KP_1), COMBO(combo12, KC_KP_2), COMBO(combo13, KC_KP_3), COMBO(combo14, KC_KP_4), COMBO(combo15, KC_KP_5), COMBO(combo16, KC_KP_6), COMBO(combo17, KC_KP_7), COMBO(combo18, KC_KP_8), COMBO(combo19, KC_KP_9), COMBO(combo20, KC_KP_0)};
-
-// Tap Dance declarations
-enum { TD_U, TD_A };
+combo_t key_combos[] = {COMBO(combo1, KC_0), COMBO(combo2, KC_2), COMBO(combo3, KC_7), COMBO(combo4, KC_ESCAPE), COMBO(combo5, KC_9), COMBO(combo6, KC_ESCAPE), COMBO(combo8, KC_2), COMBO(combo9, KC_7), COMBO(combo11, KC_KP_1), COMBO(combo12, KC_KP_2), COMBO(combo13, KC_KP_3), COMBO(combo14, KC_KP_4), COMBO(combo15, KC_KP_5), COMBO(combo16, KC_KP_6), COMBO(combo17, KC_KP_7), COMBO(combo18, KC_KP_8), COMBO(combo19, KC_KP_9), COMBO(combo20, KC_KP_0), COMBO(combofj, QK_CAPS_WORD_TOGGLE)};
 
 // Tap Dance definitions
 tap_dance_action_t tap_dance_actions[] = {
