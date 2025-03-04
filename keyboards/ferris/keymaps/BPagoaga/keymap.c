@@ -16,6 +16,8 @@ enum layer_names {
 // Tap Dance declarations
 enum { TD_U, TD_A };
 
+const char chordal_hold_layout[MATRIX_ROWS][MATRIX_COLS] PROGMEM = LAYOUT_split_3x5_2('L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'L', 'L', 'L', 'L', 'L', 'R', 'R', 'R', 'R', 'R', 'L', 'L', 'R', 'R');
+
 const uint16_t PROGMEM combo_cced[] = {FR_C, FR_V, COMBO_END};
 const uint16_t PROGMEM combo_esc[]  = {LGUI_T(FR_Q), TD(TD_A), COMBO_END};
 const uint16_t PROGMEM combo_eacu[] = {LCTL_T(FR_D), FR_E, COMBO_END};
