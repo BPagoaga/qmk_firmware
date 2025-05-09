@@ -35,7 +35,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Pick good defaults for enabling homerow modifiers
 #define TAPPING_TERM 170
 #define PERMISSIVE_HOLD
-#define HOLD_ON_OTHER_KEY_PRESS
 #define QUICK_TAP_TERM 120
 #define CHORDAL_HOLD
 
